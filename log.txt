@@ -3,6 +3,7 @@ b579774 Task 2.3
 4b35b4e Task 2.2
 b653d4d Task 2.1
 a3d7542 (origin/main, origin/HEAD) Task 1.2
+2e9fa0a Task 1.1
 3c9502b style fixes
 2b4f164 fixed tests for the not-for-credit tasks; parameter ordering and ensuring consistent line endings.
 ff5004e adding shortcut keys for Inline Variable (Re: Piazza question)
