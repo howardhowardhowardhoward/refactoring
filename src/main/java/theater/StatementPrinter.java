@@ -34,12 +34,16 @@ public class StatementPrinter {
             // add volume credits
             volumeCredits += getVolumeCredits(performance);
             // print line for this order
-            result.append(String.format("  %s: %s (%s seats)%n", getPlay(performance).getName(), NumberFormat.getCurrencyInstance(Locale.US).format(thisAmount / Constants.PERCENT_FACTOR), performance.getAudience()));
+            result.append(String.format("  %s: %s (%s seats)%n", getPlay(performance).getName(), usd(thisAmount), performance.getAudience()));
             totalAmount += thisAmount;
         }
-        result.append(String.format("Amount owed is %s%n", NumberFormat.getCurrencyInstance(Locale.US).format(totalAmount / Constants.PERCENT_FACTOR)));
+        result.append(String.format("Amount owed is %s%n", usd(totalAmount)));
         result.append(String.format("You earned %s credits%n", volumeCredits));
         return result.toString();
+    }
+
+    private static String usd(int totalAmount) {
+        return NumberFormat.getCurrencyInstance(Locale.US).format(totalAmount / Constants.PERCENT_FACTOR);
     }
 
     private int getVolumeCredits(Performance performance) {
